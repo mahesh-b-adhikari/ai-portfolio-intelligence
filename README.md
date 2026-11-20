@@ -3,74 +3,61 @@
 
 An evidence-grounded AI application that transforms weekly portfolio reporting data into executive-level insights.
 
-## Overview
+**From weekly status updates to leadership decisions.**
 
+A working, independent proof of concept that compares portfolio updates, identifies meaningful changes in delivery health, milestones, risks, and dependencies, and uses AI to prepare an executive briefing. Built with **synthetic data**; not an enterprise production deployment.
+
+**Start here:** [Read the full sample executive briefing](examples/sample_executive_brief.md) · [See how it works](#how-it-works) · [Explore the technical architecture](#architecture)
+
+## What does it actually produce?
+
+Imagine receiving weekly updates for eight technology initiatives. Instead of manually scanning each update to work out what changed, this prototype produces a consolidated, decision-oriented briefing.
+
+### Example: Weekly Executive Brief
+
+*Digital Payments Modernization · 8 fictional initiatives · September 18–25, 2026*
+
+| Leadership signal | What the example briefing surfaces |
+|---|---|
+| **Critical blocker** | **PAY-06:** Incomplete legacy data mapping prevents migration rehearsal; delivery health moved from amber to red. |
+| **Milestone slipped** | **PAY-02:** Vendor certification delay moved a milestone by **21 days**; delivery health moved from green to amber. |
+| **Decision needed** | **PAY-04:** Authentication architecture selection due **October 2, 2026**. |
+| **Dependency exposure** | **PAY-03** depends on the delayed PAY-02 initiative; **PAY-08** is exposed to PAY-06 deterioration. |
+| **Progress is not health** | **PAY-05** progressed from **45% to 65%** complete but still carries a high-severity reconciliation risk. |
+
+**[View the complete sample executive briefing →](examples/sample_executive_brief.md)**
+
+*This is an illustrative summary of the synthetic demonstration, not evidence of results achieved at an employer.*
+
+## Why it matters
+
+A dashboard can show the current status of each initiative. This prototype explores a complementary question: **What changed since last week, why does it matter, and what needs leadership attention?**
+
+It illustrates a potential way to:
+
+- Distinguish meaningful deterioration from routine updates.
+- Connect an initiative's problems to downstream dependencies.
+- Separate completion percentage from delivery health.
+- Highlight decisions and blockers in a briefing that leaders can review quickly.
+
+These are demonstrated capabilities, **not measured productivity savings or claims of production adoption**.
+
+## How it works
+
+1. **Read weekly updates:** Import structured Excel portfolio snapshots.
+2. **Find the changes:** Compare the snapshots using deterministic calculations, including milestone movement and status changes.
+3. **Write the briefing:** Use the OpenAI API to synthesize the structured findings into an executive narrative.
+4. **Check the evidence:** Run targeted automated checks for selected identifiers and milestone-delay claims; human review is still required.
+
+The project has an end-to-end working pipeline and **13 passing automated tests**. It does not have a graphical user interface; the linked sample briefing shows the output without requiring the reader to run the code.
+
+---
+
+## Overview
 
 Enterprise leaders often manage complex portfolios spanning multiple teams, competing priorities, delivery risks, and interdependent initiatives. Traditional status reporting can make it difficult to distinguish routine progress updates from issues requiring leadership attention.
 
-The AI Portfolio Intelligence Assistant is a working proof of concept that transforms structured portfolio reporting data into actionable executive intelligence. It combines deterministic change detection with generative AI to identify delivery deterioration, milestone movement, cross-team dependencies, and decisions requiring intervention.
-
-The project demonstrates an evidence-first approach to AI-assisted portfolio governance: using automation to reduce manual analysis, surface meaningful changes, and support more informed leadership discussions while retaining human oversight.
-
-
-The application:
-
-- Ingests structured portfolio data from Excel workbooks.
-- Compares weekly portfolio snapshots to identify material changes.
-- Detects status deterioration, milestone delays, emerging risks, blockers, and dependencies.
-- Uses the OpenAI API to synthesize findings into a concise executive brief.
-- Evaluates selected AI-generated claims against structured evidence.
-
-
-
-## Example: Executive Portfolio Intelligence
-
-**[View the complete AI-generated executive brief](examples/sample_executive_brief.md)**
-
-The following example illustrates how the application analyzes two weekly snapshots of a synthetic Digital Payments Modernization portfolio.
-
-**Portfolio:** 8 initiatives
-
-**Reporting period:** September 18–25, 2026
-
-### Executive Snapshot
-
-| Indicator | Finding |
-|---|---|
-| Delivery health | 3 initiatives deteriorated; 1 improved |
-| Milestone movement | PAY-02 delayed by 21 days |
-| Critical blocker | PAY-06 migration rehearsal blocked by incomplete data mapping |
-| Emerging delivery risk | PAY-05 progressed from 45% to 65% completion but retains a high-severity reconciliation risk |
-| Cross-team dependencies | PAY-03 exposed to PAY-02 delay; PAY-08 exposed to PAY-06 deterioration |
-| Leadership decision | PAY-04 authentication architecture selection due October 2, 2026 |
-| Stable/on track | PAY-01 |
-
-### Leadership Attention
-
-**1. Legacy Platform Migration (PAY-06)**
-
-Delivery status deteriorated from amber to red. Incomplete legacy data mapping is preventing migration rehearsal from starting. The associated risk increased from medium to high.
-
-**2. Real-Time Payments Rollout (PAY-02)**
-
-Delivery status deteriorated from green to amber, with a 21-day milestone delay. Vendor certification delays reduce the time available for downstream integration and launch readiness.
-
-**3. Payment Authentication (PAY-04)**
-
-A decision is required on the target authentication architecture by October 2, 2026. Delaying the decision threatens the planned architecture and implementation schedule.
-
-### Why This Matters
-
-The demonstration illustrates how structured portfolio evidence can be transformed into an executive briefing that distinguishes:
-
-- Delivery progress from actual delivery health.
-- Individual initiative issues from cross-team dependency exposure.
-- Status reporting from decisions requiring leadership attention.
-
-The application calculates portfolio changes deterministically, uses generative AI to synthesize the narrative, and applies targeted automated checks to selected claims.
-
-All findings are based on fictional demonstration data.
-
+The AI Portfolio Intelligence Assistant combines deterministic change detection with generative AI to support executive reporting while retaining human oversight. The underlying portfolio comparisons are calculated in Python; AI is used for narrative synthesis, not as the source of calculated facts.
 
 ## Demonstration Data
 
