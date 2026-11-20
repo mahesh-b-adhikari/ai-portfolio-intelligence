@@ -1,0 +1,456 @@
+{
+  "portfolio_id": "PAYMOD",
+  "portfolio_name": "Digital Payments Modernization",
+  "purpose": "Modernize payment capabilities to improve speed, resilience, security, interoperability, and customer experience.",
+  "reporting_date": "2026-09-25",
+  "initiatives": [
+    {
+      "initiative_id": "PAY-01",
+      "name": "Payments API Modernization",
+      "purpose": "Replace legacy payment interfaces with modern APIs to improve interoperability and reduce integration complexity.",
+      "objective": "Deploy the new payment API gateway and migrate priority payment services by Q1 2027.",
+      "owner": "Jordan Lee",
+      "status": "green",
+      "next_milestone": "Production API gateway ready",
+      "milestone_date": "2026-10-15",
+      "update": "Priority-service integration continues to plan; no milestone or health changes.",
+      "percent_complete": 35,
+      "deliverables": [
+        {
+          "name": "API architecture approved",
+          "weight": 15,
+          "status": "complete",
+          "completion_criteria": "Architecture approved by platform and security reviewers."
+        },
+        {
+          "name": "API gateway configured",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Gateway configured and validated in the target environment."
+        },
+        {
+          "name": "Priority services integrated",
+          "weight": 35,
+          "status": "in_progress",
+          "completion_criteria": "All five priority payment services pass integration testing against the production-ready API gateway."
+        },
+        {
+          "name": "End-to-end testing",
+          "weight": 20,
+          "status": "not_started",
+          "completion_criteria": "All priority end-to-end payment scenarios pass."
+        },
+        {
+          "name": "Production readiness",
+          "weight": 10,
+          "status": "not_started",
+          "completion_criteria": "Operational readiness checklist and production approval are complete."
+        }
+      ],
+      "risks": [],
+      "blockers": [],
+      "dependencies": [],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-02",
+      "name": "Real-Time Payments Rollout",
+      "purpose": "Expand instant-payment capabilities while meeting network, operational, and control requirements.",
+      "objective": "Launch the next real-time payment capability for the targeted customer segment in Q4 2026.",
+      "owner": "Priya Shah",
+      "status": "amber",
+      "next_milestone": "Network certification complete",
+      "milestone_date": "2026-11-10",
+      "update": "Vendor certification has moved to November 10 after the vendor identified additional certification work.",
+      "percent_complete": 35,
+      "deliverables": [
+        {
+          "name": "Solution design approved",
+          "weight": 15,
+          "status": "complete",
+          "completion_criteria": "Architecture and control design approved."
+        },
+        {
+          "name": "Network connectivity established",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Required network connectivity validated."
+        },
+        {
+          "name": "Vendor certification",
+          "weight": 25,
+          "status": "in_progress",
+          "completion_criteria": "Vendor certification is formally approved."
+        },
+        {
+          "name": "End-to-end payment testing",
+          "weight": 25,
+          "status": "not_started",
+          "completion_criteria": "Required real-time payment scenarios pass end-to-end testing."
+        },
+        {
+          "name": "Launch readiness",
+          "weight": 15,
+          "status": "not_started",
+          "completion_criteria": "Operational and business launch approvals are complete."
+        }
+      ],
+      "risks": [
+        {
+          "id": "R-02-01",
+          "severity": "high",
+          "description": "Vendor certification is delayed, reducing time available for downstream integration and launch readiness."
+        }
+      ],
+      "blockers": [],
+      "dependencies": [
+        {
+          "initiative_id": "PAY-01",
+          "description": "Uses common payment API services for selected transaction flows."
+        }
+      ],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-03",
+      "name": "Fraud Detection Modernization",
+      "purpose": "Improve real-time fraud detection for modern payment flows without creating unnecessary customer friction.",
+      "objective": "Deploy enhanced fraud decisioning for real-time payments before broader customer rollout.",
+      "owner": "Elena Garcia",
+      "status": "green",
+      "next_milestone": "Real-time fraud integration testing complete",
+      "milestone_date": "2026-11-18",
+      "update": "Internal work remains on plan, but the PAY-02 certification delay has reduced schedule margin for final integration testing.",
+      "percent_complete": 45,
+      "deliverables": [
+        {
+          "name": "Fraud rules baseline approved",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Fraud and risk owners approve the baseline rule set."
+        },
+        {
+          "name": "Decisioning service configured",
+          "weight": 25,
+          "status": "complete",
+          "completion_criteria": "Decisioning service is configured for target payment flows."
+        },
+        {
+          "name": "Real-time payment integration",
+          "weight": 25,
+          "status": "in_progress",
+          "completion_criteria": "Fraud service successfully processes certified real-time payment messages."
+        },
+        {
+          "name": "Model and rule validation",
+          "weight": 20,
+          "status": "not_started",
+          "completion_criteria": "Validation thresholds and control tests pass."
+        },
+        {
+          "name": "Production readiness",
+          "weight": 10,
+          "status": "not_started",
+          "completion_criteria": "Fraud operations and production readiness approvals are complete."
+        }
+      ],
+      "risks": [
+        {
+          "id": "R-03-01",
+          "severity": "medium",
+          "description": "The PAY-02 certification delay reduces schedule margin for final fraud integration testing."
+        }
+      ],
+      "blockers": [],
+      "dependencies": [
+        {
+          "initiative_id": "PAY-02",
+          "description": "Requires certified real-time payment message flows for final integration testing."
+        }
+      ],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-04",
+      "name": "Payment Authentication",
+      "purpose": "Modernize authentication and authorization controls for digital payment journeys.",
+      "objective": "Select and implement the target authentication approach for priority payment flows by Q1 2027.",
+      "owner": "Marcus Chen",
+      "status": "amber",
+      "next_milestone": "Target authentication architecture approved",
+      "milestone_date": "2026-10-28",
+      "update": "Two viable authentication approaches remain; final architecture work is waiting for a leadership decision.",
+      "percent_complete": 35,
+      "deliverables": [
+        {
+          "name": "Current-state assessment",
+          "weight": 15,
+          "status": "complete",
+          "completion_criteria": "Current authentication patterns and control gaps documented."
+        },
+        {
+          "name": "Option analysis",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Viable authentication options evaluated against agreed criteria."
+        },
+        {
+          "name": "Target architecture",
+          "weight": 25,
+          "status": "in_progress",
+          "completion_criteria": "Target authentication architecture receives required approval."
+        },
+        {
+          "name": "Priority-flow implementation",
+          "weight": 25,
+          "status": "not_started",
+          "completion_criteria": "Target approach implemented for priority payment flows."
+        },
+        {
+          "name": "Control validation",
+          "weight": 15,
+          "status": "not_started",
+          "completion_criteria": "Security and control validation is complete."
+        }
+      ],
+      "risks": [],
+      "blockers": [],
+      "dependencies": [],
+      "decisions_needed": [
+        {
+          "id": "D-04-01",
+          "description": "Select the target authentication architecture from the two remaining viable approaches.",
+          "due_date": "2026-10-02",
+          "status": "open",
+          "impact_if_delayed": "Final architecture and priority-flow implementation cannot proceed on the planned schedule."
+        }
+      ]
+    },
+    {
+      "initiative_id": "PAY-05",
+      "name": "Settlement & Reconciliation",
+      "purpose": "Reduce manual reconciliation effort and improve visibility into payment settlement exceptions.",
+      "objective": "Automate priority settlement and reconciliation flows and exception handling by Q1 2027.",
+      "owner": "Aisha Robinson",
+      "status": "green",
+      "next_milestone": "Priority reconciliation scenarios validated",
+      "milestone_date": "2026-10-30",
+      "update": "Automated matching workflow completed, increasing verified completion, but a critical exception-scenario reconciliation test failed.",
+      "percent_complete": 65,
+      "deliverables": [
+        {
+          "name": "Settlement data mapping",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Priority settlement sources and target fields are mapped and approved."
+        },
+        {
+          "name": "Reconciliation rules configured",
+          "weight": 25,
+          "status": "complete",
+          "completion_criteria": "Priority reconciliation rules are configured and peer reviewed."
+        },
+        {
+          "name": "Automated matching workflow",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Automated matching passes agreed functional test scenarios."
+        },
+        {
+          "name": "Exception workflow",
+          "weight": 20,
+          "status": "in_progress",
+          "completion_criteria": "Exception routing and handling pass agreed functional tests."
+        },
+        {
+          "name": "Production readiness",
+          "weight": 15,
+          "status": "not_started",
+          "completion_criteria": "Operations and production-readiness approval is complete."
+        }
+      ],
+      "risks": [
+        {
+          "id": "R-05-01",
+          "severity": "high",
+          "description": "A critical reconciliation test failed for a priority exception scenario and requires remediation and retest."
+        }
+      ],
+      "blockers": [],
+      "dependencies": [],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-06",
+      "name": "Legacy Platform Migration",
+      "purpose": "Retire legacy payment-processing components and reduce operational and technology risk.",
+      "objective": "Migrate priority payment processing from the legacy platform to the target platform by Q1 2027.",
+      "owner": "Daniel Kim",
+      "status": "red",
+      "next_milestone": "Legacy data mapping complete",
+      "milestone_date": "2026-10-10",
+      "update": "Legacy data mapping did not complete as planned and now blocks the migration rehearsal.",
+      "percent_complete": 30,
+      "deliverables": [
+        {
+          "name": "Migration scope approved",
+          "weight": 15,
+          "status": "complete",
+          "completion_criteria": "In-scope services and data domains are approved."
+        },
+        {
+          "name": "Target platform capacity validated",
+          "weight": 15,
+          "status": "complete",
+          "completion_criteria": "Capacity and nonfunctional requirements are validated."
+        },
+        {
+          "name": "Legacy data mapping",
+          "weight": 25,
+          "status": "in_progress",
+          "completion_criteria": "Required legacy-to-target data mappings are complete and approved."
+        },
+        {
+          "name": "Migration rehearsal",
+          "weight": 20,
+          "status": "not_started",
+          "completion_criteria": "Migration rehearsal completes within approved timing and quality thresholds."
+        },
+        {
+          "name": "Production migration",
+          "weight": 25,
+          "status": "not_started",
+          "completion_criteria": "Priority processing is migrated and validated in production."
+        }
+      ],
+      "risks": [
+        {
+          "id": "R-06-01",
+          "severity": "high",
+          "description": "Migration rehearsal and production migration dates are at risk because data mapping is incomplete."
+        }
+      ],
+      "blockers": [
+        {
+          "id": "B-06-01",
+          "severity": "critical",
+          "description": "Required legacy data mapping is incomplete, preventing migration rehearsal from starting."
+        }
+      ],
+      "dependencies": [],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-07",
+      "name": "Customer Payment Experience",
+      "purpose": "Simplify customer-facing payment journeys and improve clarity, speed, and reliability.",
+      "objective": "Release the redesigned priority payment journey in Q4 2026.",
+      "owner": "Sofia Martinez",
+      "status": "green",
+      "next_milestone": "Integrated customer journey testing complete",
+      "milestone_date": "2026-11-05",
+      "update": "The payment-service test dependency has been resolved and integrated customer-journey testing can proceed.",
+      "percent_complete": 50,
+      "deliverables": [
+        {
+          "name": "Experience design approved",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Design, accessibility, and product approvals are complete."
+        },
+        {
+          "name": "Front-end build",
+          "weight": 30,
+          "status": "complete",
+          "completion_criteria": "Priority journey front-end build meets definition of done."
+        },
+        {
+          "name": "Payment-service integration",
+          "weight": 20,
+          "status": "in_progress",
+          "completion_criteria": "Customer journey successfully completes required payment-service calls."
+        },
+        {
+          "name": "Integrated journey testing",
+          "weight": 20,
+          "status": "not_started",
+          "completion_criteria": "Priority customer journeys pass integrated testing."
+        },
+        {
+          "name": "Release readiness",
+          "weight": 10,
+          "status": "not_started",
+          "completion_criteria": "Release and operational approvals are complete."
+        }
+      ],
+      "risks": [],
+      "blockers": [],
+      "dependencies": [
+        {
+          "initiative_id": "PAY-01",
+          "description": "Requires stable priority payment API services for integrated customer testing."
+        }
+      ],
+      "decisions_needed": []
+    },
+    {
+      "initiative_id": "PAY-08",
+      "name": "Operational Readiness & Observability",
+      "purpose": "Ensure modernized payment services can be monitored, supported, and recovered reliably in production.",
+      "objective": "Complete monitoring, alerting, runbooks, and operational readiness before major platform migrations and launches.",
+      "owner": "Noah Williams",
+      "status": "green",
+      "next_milestone": "Migration monitoring package validated",
+      "milestone_date": "2026-11-20",
+      "update": "Core observability work remains on plan, but PAY-06 migration deterioration may compress migration-specific readiness validation.",
+      "percent_complete": 40,
+      "deliverables": [
+        {
+          "name": "Observability standards approved",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Monitoring and alerting standards are approved."
+        },
+        {
+          "name": "Core dashboards configured",
+          "weight": 20,
+          "status": "complete",
+          "completion_criteria": "Core payment-service dashboards are configured and validated."
+        },
+        {
+          "name": "Migration alerts and telemetry",
+          "weight": 25,
+          "status": "in_progress",
+          "completion_criteria": "Migration-specific alerts and telemetry pass validation using target migration flows."
+        },
+        {
+          "name": "Operational runbooks",
+          "weight": 20,
+          "status": "in_progress",
+          "completion_criteria": "Runbooks are approved by operations owners."
+        },
+        {
+          "name": "Readiness exercise",
+          "weight": 15,
+          "status": "not_started",
+          "completion_criteria": "Operational readiness exercise completes successfully."
+        }
+      ],
+      "risks": [
+        {
+          "id": "R-08-01",
+          "severity": "medium",
+          "description": "PAY-06 migration delay may reduce time available to validate migration-specific alerts, telemetry, and readiness runbooks."
+        }
+      ],
+      "blockers": [],
+      "dependencies": [
+        {
+          "initiative_id": "PAY-06",
+          "description": "Requires representative migration flows and timing from the legacy-platform migration."
+        }
+      ],
+      "decisions_needed": []
+    }
+  ]
+}
