@@ -1,0 +1,189 @@
+
+# AI Portfolio Intelligence Assistant
+
+An evidence-grounded AI application that transforms weekly portfolio reporting data into executive-level insights.
+
+## Overview
+
+Enterprise portfolio leaders often rely on manually consolidated status reports to identify delivery risks, dependencies, milestone changes, and decisions requiring attention.
+
+The AI Portfolio Intelligence Assistant demonstrates how a combination of deterministic data analysis and generative AI can streamline this process while maintaining traceability to source evidence.
+
+The application:
+
+- Ingests structured portfolio data from Excel workbooks.
+- Compares weekly portfolio snapshots to identify material changes.
+- Detects status deterioration, milestone delays, emerging risks, blockers, and dependencies.
+- Uses the OpenAI API to synthesize findings into a concise executive brief.
+- Evaluates selected AI-generated claims against structured evidence.
+
+## Demonstration Data
+
+The project uses a fully synthetic **Digital Payments Modernization** portfolio consisting of eight initiatives (PAY-01 through PAY-08).
+
+Two weekly snapshots represent September 18 and September 25, 2026.
+
+All initiative details, risks, dependencies, and decisions are fictional and intended solely for demonstration.
+
+## Design Principles
+
+1. **Evidence before synthesis:** Portfolio changes are calculated programmatically before being provided to the AI model.
+2. **Separation of responsibilities:** Python handles deterministic comparisons; generative AI handles executive narrative synthesis.
+3. **Traceability:** Structured comparison results provide the evidence supporting executive summaries.
+4. **Automated validation:** Targeted checks flag unsupported identifiers and incorrect milestone-delay claims.
+5. **Explicit limitations:** Passing automated checks does not guarantee that every AI-generated statement is accurate.
+
+
+## Architecture
+
+The application follows a five-stage pipeline:
+
+```text
+Weekly Excel Workbooks
+         |
+         v
+1. Excel Ingestion & Validation
+   ingest_portfolio.py
+         |
+         v
+2. Portfolio Change Detection
+   compare_portfolio.py
+         |
+         v
+3. AI Executive Synthesis
+   synthesize_brief.py
+         |
+         v
+4. Evidence-Based Evaluation
+   evaluate_brief.py
+         |
+         v
+5. Executive Brief + Evaluation Result
+```
+
+### Key Components
+
+| File | Responsibility |
+|---|---|
+| `run_pipeline.py` | Orchestrates the end-to-end workflow |
+| `ingest_portfolio.py` | Validates Excel workbooks and produces structured JSON |
+| `compare_portfolio.py` | Calculates portfolio changes between weekly snapshots |
+| `synthesize_brief.py` | Uses the OpenAI API to generate an executive brief |
+| `evaluate_brief.py` | Checks selected AI-generated claims against structured evidence |
+| `build_templates.py` | Supports generation of demonstration workbook templates |
+| `tests/` | Contains automated ingestion, comparison, and evaluation tests |
+
+## Running the Application
+
+### Prerequisites
+
+- Python 3
+- OpenAI API access
+- Python packages: `openai` and `openpyxl`
+
+### Installation
+
+Create and activate a Python virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+python3 -m pip install openai openpyxl
+```
+
+Configure your OpenAI API key as an environment variable:
+
+```bash
+export OPENAI_API_KEY="your-api-key"
+```
+
+Never commit actual API keys or credential files to Git.
+
+### Execute the Pipeline
+
+From the project directory:
+
+```bash
+python3 run_pipeline.py
+```
+
+The pipeline processes both weekly Excel workbooks, compares portfolio changes, generates an AI executive brief, and evaluates selected claims.
+
+### Generated Outputs
+
+| File | Description |
+|---|---|
+| `portfolio_week_1.json` | Validated Week 1 portfolio snapshot |
+| `portfolio_week_2.json` | Validated Week 2 portfolio snapshot |
+| `portfolio_changes.json` | Structured comparison evidence |
+| `brief_v2.txt` | AI-generated executive brief |
+
+The pipeline reports whether its configured evidence checks passed or failed.
+
+
+## Automated Testing
+
+The project includes 13 automated tests using Python's built-in `unittest` framework.
+
+Run the tests from the project directory:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+### Test Coverage
+
+| Category | Tests | Coverage |
+|---|---:|---|
+| Excel ingestion | 3 | Missing required columns, duplicate initiative IDs, invalid dependencies |
+| Portfolio comparison | 3 | Known portfolio changes, status deterioration, progress versus delivery health |
+| Executive brief evaluation | 7 | Critical evidence presence, identifier validation, milestone-delay verification, and negative tests |
+| **Total** | **13** | |
+
+The automated tests do not require OpenAI API calls. They use existing portfolio data, comparison evidence, and a previously generated executive brief.
+
+### Validation Approach
+
+The application separates deterministic calculations from AI-generated narrative.
+
+The evaluation module checks selected claims, including:
+
+- Whether referenced initiative IDs exist in the portfolio.
+- Whether referenced risk and blocker IDs appear in the supported evidence.
+- Whether explicitly reported milestone delays agree with calculated values.
+
+Negative tests demonstrate that the evaluator can identify deliberately introduced errors, including an invented initiative and an incorrect milestone delay.
+
+## Limitations
+
+This project is a working demonstration, not a production-ready enterprise reporting platform.
+
+Current limitations include:
+
+- The evaluator does not verify every factual claim in the generated brief.
+- Decision deadlines, risk severity descriptions, and causal statements are not comprehensively validated.
+- The pipeline uses two predefined weekly snapshots rather than a continuously updated data source.
+- The application does not provide a graphical user interface.
+- AI-generated summaries require human review before use in consequential decisions.
+
+## Project Status
+
+The following capabilities have been implemented and tested:
+
+- Excel ingestion and validation
+- Week-over-week portfolio comparison
+- AI-generated executive briefing
+- Automated evidence evaluation
+- End-to-end pipeline execution
+- 13 passing automated tests
+
+Potential future enhancements include broader claim validation, additional reporting periods, structured evaluation reports, and an interactive dashboard.
+
+## Disclaimer
+
+All portfolio data is synthetic. This project does not contain or represent confidential information from any employer or client.
