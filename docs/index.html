@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Portfolio Intelligence Assistant — an evidence-grounded executive reporting prototype.">
+  <title>AI Portfolio Intelligence Assistant</title>
+  <style>
+    :root {
+      --navy: #14243a;
+      --blue: #2764b5;
+      --pale: #f3f6fa;
+      --line: #e2e8f0;
+      --muted: #58677a;
+      --red: #b73b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont,
+            "Segoe UI", sans-serif;
+      background: #fff;
+    }
+    a { color: var(--blue); }
+    .container { max-width: 1060px; margin: auto; padding: 0 24px; }
+    header { border-bottom: 1px solid var(--line); }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+    }
+    .brand { font-weight: 750; letter-spacing: -.3px; }
+    nav a { text-decoration: none; font-size: 14px; }
+    .hero {
+      padding: 86px 0 75px;
+      background: linear-gradient(135deg, #f3f7fc, #fff);
+    }
+    .eyebrow {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    h1 {
+      max-width: 780px;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 18px 0 22px;
+    }
+    h2 { font-size: 32px; letter-spacing: -.8px; line-height: 1.2; }
+    h3 { margin: 0 0 8px; font-size: 19px; }
+    .lead { max-width: 740px; font-size: 20px; color: var(--muted); }
+    .button {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 650;
+      margin: 16px 12px 0 0;
+    }
+    .button.secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid #cbd5e1;
+    }
+    section { padding: 72px 0; }
+    .soft { background: var(--pale); }
+    .intro { max-width: 750px; color: var(--muted); }
+    .metrics, .cards, .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .metric, .card, .step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 25px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+    .metric span, .card p, .step p { color: var(--muted); }
+    .card { border-top: 4px solid var(--blue); }
+    .card.critical { border-top-color: var(--red); }
+    .tag {
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .6px;
+      color: var(--blue);
+      text-transform: uppercase;
+    }
+    .critical .tag { color: var(--red); }
+    .steps { grid-template-columns: repeat(4, 1fr); }
+    .step-number { font-weight: 800; color: var(--blue); }
+    .note {
+      padding: 18px 22px;
+      border-left: 3px solid var(--blue);
+      background: var(--pale);
+      margin-top: 28px;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .hero { padding: 60px 0; }
+      section { padding: 50px 0; }
+      .metrics, .cards, .steps { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">AI Portfolio Intelligence</div>
+      <a href="https://github.com/mahesh-b-adhikari/ai-portfolio-intelligence">
+        View source on GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <div class="eyebrow">Independent AI Product Prototype</div>
+      <h1>From status reporting to leadership decisions.</h1>
+      <p class="lead">
+        An AI-assisted portfolio intelligence prototype that analyzes
+        weekly delivery updates, identifies meaningful changes, and
+        transforms structured evidence into concise executive briefings.
+      </p>
+      <a class="button" href="#demonstration">Explore the demonstration</a>
+      <a class="button secondary"
+         href="https://github.com/mahesh-b-adhikari/ai-portfolio-intelligence">
+        Explore the project
+      </a>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">The Challenge</div>
+      <h2>More reporting doesn't always mean better visibility.</h2>
+      <p class="intro">
+        Enterprise portfolios generate large volumes of weekly status
+        updates. But leaders need more than a collection of green,
+        amber, and red indicators. They need to understand what changed,
+        which dependencies are at risk, and where intervention or
+        decisions may be required.
+      </p>
+      <p class="intro">
+        This prototype explores how deterministic portfolio analysis
+        and generative AI can work together to bridge that gap.
+      </p>
+    </div>
+  </section>
+
+  <section class="soft" id="demonstration">
+    <div class="container">
+      <div class="eyebrow">Working Proof of Concept</div>
+      <h2>What changed this week?</h2>
+      <p class="intro">
+        Demonstration portfolio: Digital Payments Modernization.
+        Eight fictional initiatives compared across September 18
+        and September 25, 2026.
+      </p>
+
+      <div class="metrics">
+        <div class="metric">
+          <strong>8</strong>
+          <span>Initiatives monitored</span>
+        </div>
+        <div class="metric">
+          <strong>3</strong>
+          <span>Initiatives with deteriorating delivery health</span>
+        </div>
+        <div class="metric">
+          <strong>21 days</strong>
+          <span>Milestone delay identified</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top:55px">Executive attention required</h2>
+
+      <div class="cards">
+        <article class="card critical">
+          <div class="tag">Critical blocker · PAY-06</div>
+          <h3>Legacy Platform Migration</h3>
+          <p>
+            Delivery health deteriorated from amber to red.
+            Incomplete legacy data mapping is preventing the
+            migration rehearsal from starting. Associated risk
+            increased from medium to high.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="tag">Milestone delay · PAY-02</div>
+          <h3>Real-Time Payments Rollout</h3>
+          <p>
+            Delivery health moved from green to amber.
+            Vendor certification delays pushed the milestone
+            back 21 days, affecting downstream readiness.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="tag">Decision required · PAY-04</div>
+          <h3>Payment Authentication</h3>
+          <p>
+            A target authentication architecture decision is
+            due October 2, 2026. Delaying the decision threatens
+            the planned implementation schedule.
+          </p>
+        </article>
+      </div>
+
+      <p style="margin-top:30px">
+        <a href="https://github.com/mahesh-b-adhikari/ai-portfolio-intelligence/blob/main/examples/sample_executive_brief.md">
+          Read the complete sample executive briefing
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Approach</div>
+      <h2>How the prototype works</h2>
+      <p class="intro">
+        The design separates factual calculations from AI-generated
+        narrative, so the model is not responsible for determining
+        the underlying portfolio changes.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Ingest</h3>
+          <p>Read and validate structured weekly Excel portfolio data.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Compare</h3>
+          <p>Calculate changes in status, milestones, risks, and dependencies.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Synthesize</h3>
+          <p>Use the OpenAI API to produce an executive-oriented narrative.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Evaluate</h3>
+          <p>Check selected claims against structured portfolio evidence.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Design principle:</strong> Python calculates the changes.
+        Generative AI explains their significance. Targeted automated
+        checks help identify selected unsupported claims, while human
+        review remains necessary.
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="container">
+      <div class="eyebrow">Transparency</div>
+      <h2>A tested prototype, not a production deployment.</h2>
+      <p class="intro">
+        The project includes an end-to-end processing pipeline and
+        13 automated tests covering ingestion, portfolio comparison,
+        and selected executive-brief evaluation scenarios.
+      </p>
+      <p class="intro">
+        All demonstration data is synthetic. The application is not
+        deployed within an enterprise, does not provide a live
+        dashboard, and does not comprehensively verify every
+        AI-generated statement.
+      </p>
+      <a class="button"
+         href="https://github.com/mahesh-b-adhikari/ai-portfolio-intelligence">
+        Review architecture and source code
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    AI Portfolio Intelligence Assistant · Independent proof of concept
+    using synthetic portfolio data.
+  </div>
+</footer>
+
+</body>
+</html>
