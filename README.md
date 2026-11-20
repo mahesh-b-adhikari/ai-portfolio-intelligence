@@ -187,3 +187,51 @@ Potential future enhancements include broader claim validation, additional repor
 ## Disclaimer
 
 All portfolio data is synthetic. This project does not contain or represent confidential information from any employer or client.
+
+
+## Example: Executive Portfolio Intelligence
+
+**[View the complete AI-generated executive brief](examples/sample_executive_brief.md)**
+
+The following example illustrates how the application analyzes two weekly snapshots of a synthetic Digital Payments Modernization portfolio.
+
+**Portfolio:** 8 initiatives  
+**Reporting period:** September 18–25, 2026
+
+### Executive Snapshot
+
+| Indicator | Finding |
+|---|---|
+| Delivery health | 3 initiatives deteriorated; 1 improved |
+| Milestone movement | PAY-02 delayed by 21 days |
+| Critical blocker | PAY-06 migration rehearsal blocked by incomplete data mapping |
+| Emerging delivery risk | PAY-05 progressed from 45% to 65% completion but retains a high-severity reconciliation risk |
+| Cross-team dependencies | PAY-03 exposed to PAY-02 delay; PAY-08 exposed to PAY-06 deterioration |
+| Leadership decision | PAY-04 authentication architecture selection due October 2, 2026 |
+| Stable/on track | PAY-01 |
+
+### Leadership Attention
+
+**1. Legacy Platform Migration (PAY-06)**
+
+Delivery status deteriorated from amber to red. Incomplete legacy data mapping is preventing migration rehearsal from starting. The associated risk increased from medium to high.
+
+**2. Real-Time Payments Rollout (PAY-02)**
+
+Delivery status deteriorated from green to amber, with a 21-day milestone delay. Vendor certification delays reduce the time available for downstream integration and launch readiness.
+
+**3. Payment Authentication (PAY-04)**
+
+A decision is required on the target authentication architecture by October 2, 2026. Delaying the decision threatens the planned architecture and implementation schedule.
+
+### Why This Matters
+
+The demonstration illustrates how structured portfolio evidence can be transformed into an executive briefing that distinguishes:
+
+- Delivery progress from actual delivery health.
+- Individual initiative issues from cross-team dependency exposure.
+- Status reporting from decisions requiring leadership attention.
+
+The application calculates portfolio changes deterministically, uses generative AI to synthesize the narrative, and applies targeted automated checks to selected claims.
+
+All findings are based on fictional demonstration data.
