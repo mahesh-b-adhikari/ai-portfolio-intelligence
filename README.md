@@ -5,9 +5,13 @@ An evidence-grounded AI application that transforms weekly portfolio reporting d
 
 ## Overview
 
-Enterprise portfolio leaders often rely on manually consolidated status reports to identify delivery risks, dependencies, milestone changes, and decisions requiring attention.
 
-The AI Portfolio Intelligence Assistant demonstrates how a combination of deterministic data analysis and generative AI can streamline this process while maintaining traceability to source evidence.
+Enterprise leaders often manage complex portfolios spanning multiple teams, competing priorities, delivery risks, and interdependent initiatives. Traditional status reporting can make it difficult to distinguish routine progress updates from issues requiring leadership attention.
+
+The AI Portfolio Intelligence Assistant is a working proof of concept that transforms structured portfolio reporting data into actionable executive intelligence. It combines deterministic change detection with generative AI to identify delivery deterioration, milestone movement, cross-team dependencies, and decisions requiring intervention.
+
+The project demonstrates an evidence-first approach to AI-assisted portfolio governance: using automation to reduce manual analysis, surface meaningful changes, and support more informed leadership discussions while retaining human oversight.
+
 
 The application:
 
@@ -16,6 +20,57 @@ The application:
 - Detects status deterioration, milestone delays, emerging risks, blockers, and dependencies.
 - Uses the OpenAI API to synthesize findings into a concise executive brief.
 - Evaluates selected AI-generated claims against structured evidence.
+
+
+
+## Example: Executive Portfolio Intelligence
+
+**[View the complete AI-generated executive brief](examples/sample_executive_brief.md)**
+
+The following example illustrates how the application analyzes two weekly snapshots of a synthetic Digital Payments Modernization portfolio.
+
+**Portfolio:** 8 initiatives
+
+**Reporting period:** September 18–25, 2026
+
+### Executive Snapshot
+
+| Indicator | Finding |
+|---|---|
+| Delivery health | 3 initiatives deteriorated; 1 improved |
+| Milestone movement | PAY-02 delayed by 21 days |
+| Critical blocker | PAY-06 migration rehearsal blocked by incomplete data mapping |
+| Emerging delivery risk | PAY-05 progressed from 45% to 65% completion but retains a high-severity reconciliation risk |
+| Cross-team dependencies | PAY-03 exposed to PAY-02 delay; PAY-08 exposed to PAY-06 deterioration |
+| Leadership decision | PAY-04 authentication architecture selection due October 2, 2026 |
+| Stable/on track | PAY-01 |
+
+### Leadership Attention
+
+**1. Legacy Platform Migration (PAY-06)**
+
+Delivery status deteriorated from amber to red. Incomplete legacy data mapping is preventing migration rehearsal from starting. The associated risk increased from medium to high.
+
+**2. Real-Time Payments Rollout (PAY-02)**
+
+Delivery status deteriorated from green to amber, with a 21-day milestone delay. Vendor certification delays reduce the time available for downstream integration and launch readiness.
+
+**3. Payment Authentication (PAY-04)**
+
+A decision is required on the target authentication architecture by October 2, 2026. Delaying the decision threatens the planned architecture and implementation schedule.
+
+### Why This Matters
+
+The demonstration illustrates how structured portfolio evidence can be transformed into an executive briefing that distinguishes:
+
+- Delivery progress from actual delivery health.
+- Individual initiative issues from cross-team dependency exposure.
+- Status reporting from decisions requiring leadership attention.
+
+The application calculates portfolio changes deterministically, uses generative AI to synthesize the narrative, and applies targeted automated checks to selected claims.
+
+All findings are based on fictional demonstration data.
+
 
 ## Demonstration Data
 
@@ -81,6 +136,7 @@ Weekly Excel Workbooks
 - OpenAI API access
 - Python packages: `openai` and `openpyxl`
 
+
 ### Installation
 
 Create and activate a Python virtual environment:
@@ -90,10 +146,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install dependencies:
+Install the project's pinned dependencies:
 
 ```bash
-python3 -m pip install openai openpyxl
+python3 -m pip install -r requirements.txt
 ```
 
 Configure your OpenAI API key as an environment variable:
@@ -187,51 +243,3 @@ Potential future enhancements include broader claim validation, additional repor
 ## Disclaimer
 
 All portfolio data is synthetic. This project does not contain or represent confidential information from any employer or client.
-
-
-## Example: Executive Portfolio Intelligence
-
-**[View the complete AI-generated executive brief](examples/sample_executive_brief.md)**
-
-The following example illustrates how the application analyzes two weekly snapshots of a synthetic Digital Payments Modernization portfolio.
-
-**Portfolio:** 8 initiatives  
-**Reporting period:** September 18–25, 2026
-
-### Executive Snapshot
-
-| Indicator | Finding |
-|---|---|
-| Delivery health | 3 initiatives deteriorated; 1 improved |
-| Milestone movement | PAY-02 delayed by 21 days |
-| Critical blocker | PAY-06 migration rehearsal blocked by incomplete data mapping |
-| Emerging delivery risk | PAY-05 progressed from 45% to 65% completion but retains a high-severity reconciliation risk |
-| Cross-team dependencies | PAY-03 exposed to PAY-02 delay; PAY-08 exposed to PAY-06 deterioration |
-| Leadership decision | PAY-04 authentication architecture selection due October 2, 2026 |
-| Stable/on track | PAY-01 |
-
-### Leadership Attention
-
-**1. Legacy Platform Migration (PAY-06)**
-
-Delivery status deteriorated from amber to red. Incomplete legacy data mapping is preventing migration rehearsal from starting. The associated risk increased from medium to high.
-
-**2. Real-Time Payments Rollout (PAY-02)**
-
-Delivery status deteriorated from green to amber, with a 21-day milestone delay. Vendor certification delays reduce the time available for downstream integration and launch readiness.
-
-**3. Payment Authentication (PAY-04)**
-
-A decision is required on the target authentication architecture by October 2, 2026. Delaying the decision threatens the planned architecture and implementation schedule.
-
-### Why This Matters
-
-The demonstration illustrates how structured portfolio evidence can be transformed into an executive briefing that distinguishes:
-
-- Delivery progress from actual delivery health.
-- Individual initiative issues from cross-team dependency exposure.
-- Status reporting from decisions requiring leadership attention.
-
-The application calculates portfolio changes deterministically, uses generative AI to synthesize the narrative, and applies targeted automated checks to selected claims.
-
-All findings are based on fictional demonstration data.
