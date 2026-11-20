@@ -92,28 +92,22 @@ All initiative details, risks, dependencies, and decisions are fictional and int
 ## Architecture
 
 The application follows a five-stage pipeline:
+```mermaid
+flowchart TD
+    A["Weekly Excel Portfolio Snapshots"]
+    B["Ingestion & Validation"]
+    C["Deterministic Change Detection"]
+    D["OpenAI Executive Synthesis"]
+    E["Evidence-Based Evaluation"]
+    F["Executive Portfolio Brief"]
 
-```text
-Weekly Excel Workbooks
-         |
-         v
-1. Excel Ingestion & Validation
-   ingest_portfolio.py
-         |
-         v
-2. Portfolio Change Detection
-   compare_portfolio.py
-         |
-         v
-3. AI Executive Synthesis
-   synthesize_brief.py
-         |
-         v
-4. Evidence-Based Evaluation
-   evaluate_brief.py
-         |
-         v
-5. Executive Brief + Evaluation Result
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+
+    C -. "Structured evidence" .-> E
 ```
 
 ### Key Components
